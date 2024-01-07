@@ -233,11 +233,11 @@ func downloadCIDRs(whitelist, blacklist pathList) error {
 
 	for _, code := range countryCodes {
 		code = strings.ToLower(code)
-		err := downloadContent("https://raw.githubusercontent.com/herrbischoff/country-ip-blocks/master/ipv4/"+code+".cidr", code)
+		err := downloadContent("https://git.herrbischoff.com/country-ip-blocks-alternative/plain/ipv4/"+code+".netset", code)
 		if err != nil {
 			return err
 		}
-		err = downloadContent("https://raw.githubusercontent.com/herrbischoff/country-ip-blocks/master/ipv6/"+code+".cidr", code)
+		err = downloadContent("https://git.herrbischoff.com/country-ip-blocks-alternative/plain/ipv6/"+code+".netset", code)
 		if err != nil {
 			return err
 		}
